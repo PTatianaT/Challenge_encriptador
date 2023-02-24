@@ -40,7 +40,7 @@ footer {
 
 .mensaje {
     background: #FFFFFF;
-    background-image: url(/imagenes/Muneco.png);
+    background-image: url(./imagenes/muneco.png);
     background-repeat: no-repeat;
     border: none;
     border-radius: 32px;
