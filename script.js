@@ -2,8 +2,7 @@ const textArea = document.querySelector(".text__area");
 const mensaje = document.querySelector(".mensaje");
 const texto1 = document.querySelector(".texto1");
 const texto2 = document.querySelector(".texto2");
-
-
+const btnCopiar = document.querySelector(".btn__copiar"); //esto lo agregué
 
 
 // La letra "e" es convertida para "enter"
@@ -21,12 +20,14 @@ function btnEncriptar(){
     mensaje.style.backgroundImage = "none";
     texto1.style.display = "none";
     texto2.style.display = "none";
+    /*btnCopiar.classList.remove("ocultar");*/
 }
 
 function btnDesencriptar(){
     const textoEncriptado = desencriptar(textArea.value)
     mensaje.value = textoEncriptado;
     textArea.value = "";
+    /*btnCopiar.classList.remove("ocultar");*/
 }
 
 function encriptar(stringEncriptada){
@@ -55,4 +56,24 @@ function desencriptar(stringDesencriptada){
 
 function copiar(){
     navigator.clipboard.writeText(mensaje.value);
+    textArea.focus ();
+    mensaje.value = "";
+    //lo que sigue no funciona
+    mensaje.style.backgroundImage = url(imagenes/muneco.png);
+    texto1.style.display = "block";
+    texto2.style.display = "block";
 }
+
+
+
+/*if (frase.length!=0) {
+    if (/[^a-zñ ]/.test(frase)) {
+        document.getElementById("inf-corri").style.color="red"; //esto es otra cosa no prestes atención 
+       swal("No se permiten Mayusculas, ni caracteres especiales","","error"); //esto es una alerta
+    }
+
+       else{
+        document.getElementById("inf-corri").style.color="black"; 
+       document.getElementById("mostrar").innerHTML=frase ;
+       aparecer();
+    }}*/
